@@ -42,14 +42,7 @@ def sample_data(engine):
          'disabled': False
          }
     ])
-    conn.execute(users.insert(), [
-        {'id': 3,
-         'login': 'user',
-         'passwd': '$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
-         'is_superuser': False,
-         'disabled': False
-         }
-    ])
+
     conn.execute(users.insert(), [
         {'id': 3,
          'login': 'user',
