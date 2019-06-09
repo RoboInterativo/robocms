@@ -11,6 +11,8 @@ from settings import config
 
 from db_auth import DBAuthorizationPolicy
 from handlers import Web
+logging.basicConfig(format=u'%(levelname)-8s [%(asctime)s] %(message)s',
+                    level=logging.DEBUG, filename='/home/robocms.log')
 
 async def init(loop):
     redis_pool = await create_pool(('localhost', 6379))
