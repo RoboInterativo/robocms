@@ -1,0 +1,4 @@
+*.pyc
+/__pycache__/
+robocms_app/__pycache__/
+*.log
