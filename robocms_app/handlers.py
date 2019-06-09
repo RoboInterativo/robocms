@@ -52,7 +52,7 @@ class Web(object):
 
     async def logout(self, request):
         await check_authorized(request)
-        response = web.Response(body=b'You have been logged out')
+        response = web.Response(content_type='text/html', body=b'You have been logged out')
         await forget(request, response)
         return response
 
