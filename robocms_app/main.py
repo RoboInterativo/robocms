@@ -12,7 +12,6 @@ from settings import config
 from db_auth import DBAuthorizationPolicy
 from handlers import Web
 
-
 async def init(loop):
     redis_pool = await create_pool(('localhost', 6379))
     dbengine = await create_engine(user= config['postgres']['user'],
