@@ -1,5 +1,5 @@
 import asyncio
-
+from routes import setup_routes
 from aiohttp import web
 from aiohttp_session import setup as setup_session
 from aiohttp_session.redis_storage import RedisStorage
@@ -9,8 +9,8 @@ from aiopg.sa import create_engine
 from aioredis import create_pool
 
 
-from demo.database_auth.db_auth import DBAuthorizationPolicy
-from demo.database_auth.handlers import Web
+from db_auth import DBAuthorizationPolicy
+from handlers import Web
 
 
 async def init(loop):
