@@ -29,7 +29,7 @@ def sample_data(engine):
     conn.execute(users.insert(), [
         {'id': 1,
          'login': 'admin',
-         'password':'$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
+         'passwd':'$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
          'superuser': True,
          'disabled': False
          }
@@ -37,7 +37,7 @@ def sample_data(engine):
     conn.execute(users.insert(), [
         {'id': 1,
          'login': 'moderator',
-         'password': '$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
+         'passwd': '$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
          'superuser': False,
          'disabled': False
          }
@@ -45,7 +45,7 @@ def sample_data(engine):
     conn.execute(users.insert(), [
         {'id': 2,
          'login': 'moderator',
-         'password': '$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
+         'passwd': '$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
          'is_superuser': False,
          'disabled': False
          }
@@ -53,7 +53,7 @@ def sample_data(engine):
     conn.execute(users.insert(), [
         {'id': 3,
          'login': 'user',
-         'password': '$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
+         'passwd': '$5$rounds=535000$2kqN9fxCY6Xt5/pi$tVnh0xX87g/IsnOSuorZG608CZDFbWIWBr58ay6S4pD',
          'is_superuser': False,
          'disabled': False
          }
