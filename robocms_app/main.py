@@ -12,28 +12,19 @@ from settings import config
 from db_auth import DBAuthorizationPolicy
 from handlers import Web
 
-
 async def init(loop):
-
     redis_pool = await create_pool(('localhost', 6379))
-    db_engine = await create_engine(user= config['postgres']['user'],
+    dbengine = await create_engine(user= config['postgres']['user'],
                                     password=config['postgres']['password'],
                                     database=config['postgres']['database'],
                                     host=config['postgres']['host'])
+
     app = web.Application()
-    app.db_engine = db_engine
     setup_session(app, RedisStorage(redis_pool))
     setup_security(app,
                    SessionIdentityPolicy(),
-                   DBAuthorizationPolicy(db_engine))
-
-    web_handlers = Web()
-    web_handlers.configure(app)
-
-    handler = app.make_handler()
-    srv = await loop.create_server(handler, '127.0.0.1', 8080)
-    print('Server started at http://127.0.0.1:8080')
-    return srv, app, handler
+                   DBAuthorizationPolicy(dbengine))
+    return app
 
 
 async def finalize(srv, app, handler):
