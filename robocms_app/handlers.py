@@ -59,7 +59,7 @@ class Web(object):
     async def internal_page(self, request):
         await check_permission(request, 'public')
         response = web.Response(content_type='text/html',
-            body=b'This page is visible for all registered users')
+                                body=b'This page is visible for all registered users')
         return response
 
     async def protected_page(self, request):
