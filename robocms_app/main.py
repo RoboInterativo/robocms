@@ -20,6 +20,7 @@ async def init(loop):
                                    host=config['postgres']['host'])
 
     app = web.Application()
+    app.dbengine = dbengine
     setup_session(app, RedisStorage(redis_pool))
     setup_security(app,
                    SessionIdentityPolicy(),
