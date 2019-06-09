@@ -34,7 +34,7 @@ class Web(object):
                 message='Hello, {username}!'.format(username=username))
         else:
             template = self.index_template.format(message='You need to login')
-        response = web.Response(text=str(template.encode()))
+        response = web.Response(content_type='text/plain', body=(template.encode()))
         return response
 
     async def login(self, request):
