@@ -14,7 +14,7 @@ from handlers import Web
 
 async def init(loop):
     redis_pool = await create_pool(('localhost', 6379))
-    db_engine = await create_engine(user= config['postgres']['user'],
+    dbengine = await create_engine(user= config['postgres']['user'],
                                    password=config['postgres']['password'],
                                    database=config['postgres']['database'],
                                    host=config['postgres']['host'])
@@ -23,7 +23,7 @@ async def init(loop):
     setup_session(app, RedisStorage(redis_pool))
     setup_security(app,
                    SessionIdentityPolicy(),
-                   DBAuthorizationPolicy(db_engine))
+                   DBAuthorizationPolicy(dbengine))
     web_handlers = Web()
     web_handlers.configure(app)
 
