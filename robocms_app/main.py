@@ -15,9 +15,9 @@ from handlers import Web
 async def init(loop):
     redis_pool = await create_pool(('localhost', 6379))
     dbengine = await create_engine(user= config['postgres']['user'],
-                                    password=config['postgres']['password'],
-                                    database=config['postgres']['database'],
-                                    host=config['postgres']['host'])
+                                   password=config['postgres']['password'],
+                                   database=config['postgres']['database'],
+                                   host=config['postgres']['host'])
 
     app = web.Application()
     setup_session(app, RedisStorage(redis_pool))
