@@ -7,7 +7,7 @@ from aiohttp_security import (
     check_permission, check_authorized,
 )
 
-from .db_auth import check_credentials
+from db_auth import check_credentials
 
 
 class Web(object):
