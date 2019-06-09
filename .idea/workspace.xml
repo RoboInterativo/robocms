@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe553a7e-6907-4dd9-904a-1c33ebb90678" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/robocms_app/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/robocms_app/handlers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robocms_app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/robocms_app/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/robocms_app/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="317">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -344,8 +343,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/robocms_app/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="317">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
