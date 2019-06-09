@@ -42,7 +42,7 @@ class Web(object):
         form = await request.post()
         login = form.get('login')
         password = form.get('password')
-        db_engine = request.app.dbengine
+        db_engine = request.app.db_engine
         if await check_credentials(db_engine, login, password):
             await remember(request, response, login)
             raise response
