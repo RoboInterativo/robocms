@@ -8,6 +8,7 @@ from aiohttp_security import SessionIdentityPolicy
 from aiopg.sa import create_engine
 from aioredis import create_pool
 from settings import config
+import logging
 
 from db_auth import DBAuthorizationPolicy
 from handlers import Web
