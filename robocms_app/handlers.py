@@ -35,7 +35,7 @@ class Web(object):
                 message='Hello, {username}!'.format(username=username))
         else:
             template = self.index_template.format(message='You need to login')
-        return aiohttp_jinja2.render_template('base_admin.html', request, { template })
+        return aiohttp_jinja2.render_template('base_admin.html', request, {'message': template})
         #response = web.Response(content_type='text/html', body=(template.encode()))
         #return response
 
