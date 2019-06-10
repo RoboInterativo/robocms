@@ -33,9 +33,9 @@ async def init(loop):
                    DBAuthorizationPolicy(dbengine))
     web_handlers = Web()
     web_handlers.configure(app)
-    
+
     aiohttp_jinja2.setup(app,
-                         loader=jinja2.FileSystemLoader(str(base_dir / 'aiohttpdemo_polls' / 'templates')))
+                         loader=jinja2.FileSystemLoader(str(base_dir / 'robocms_app' / 'templates')))
 
     handler = app.make_handler()
     srv = await loop.create_server(handler, '127.0.0.1', 8080)
