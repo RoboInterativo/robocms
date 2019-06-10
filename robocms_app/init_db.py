@@ -54,7 +54,7 @@ def sample_data(engine):
 
     conn.execute(permissions.insert(), [
         {'id': 1,
-         'user_id': 2,
+         'user_id': 1,
          'perm_name': 'protected',
 
          }

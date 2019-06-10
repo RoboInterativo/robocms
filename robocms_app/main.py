@@ -46,7 +46,7 @@ async def finalize(srv, app, handler):
     app.loop.remove_reader(sock.fileno())
     sock.close()
 
-    await handler.finish_connections(1.0)
+    #await handler.finish_connections(1.0)
     srv.close()
     await srv.wait_closed()
     await app.finish()
