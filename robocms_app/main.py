@@ -7,7 +7,7 @@ from aiohttp_security import setup as setup_security
 from aiohttp_security import SessionIdentityPolicy
 from aiopg.sa import create_engine
 from aioredis import create_pool
-from settings import config
+from settings import config, base_dir
 import jinja2
 import aiohttp_jinja2
 
@@ -33,8 +33,9 @@ async def init(loop):
                    DBAuthorizationPolicy(dbengine))
     web_handlers = Web()
     web_handlers.configure(app)
+    BASE_DIR = pathlib.Path(__file__).parent.parent
     aiohttp_jinja2.setup(app,
-                         loader=jinja2.FileSystemLoader(str(BASE_DIR / 'aiohttpdemo_polls' / 'templates')))
+                         loader=jinja2.FileSystemLoader(str(base_dir / 'aiohttpdemo_polls' / 'templates')))
 
     handler = app.make_handler()
     srv = await loop.create_server(handler, '127.0.0.1', 8080)
