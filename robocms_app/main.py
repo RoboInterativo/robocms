@@ -8,6 +8,7 @@ from aiohttp_security import SessionIdentityPolicy
 from aiopg.sa import create_engine
 from aioredis import create_pool
 from settings import config
+import jinja2
 import aiohttp_jinja2
 
 import logging
