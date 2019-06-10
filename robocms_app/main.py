@@ -33,7 +33,7 @@ async def init(loop):
                    DBAuthorizationPolicy(dbengine))
     web_handlers = Web()
     web_handlers.configure(app)
-    BASE_DIR = pathlib.Path(__file__).parent.parent
+    
     aiohttp_jinja2.setup(app,
                          loader=jinja2.FileSystemLoader(str(base_dir / 'aiohttpdemo_polls' / 'templates')))
 
