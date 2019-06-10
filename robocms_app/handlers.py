@@ -8,7 +8,7 @@ from aiohttp_security import (
 )
 
 from db_auth import check_credentials
-
+import aiohttp_jinja2
 
 class Web(object):
     index_template = dedent("""
@@ -27,6 +27,7 @@ class Web(object):
             </body>
     """)
 
+
     async def index(self, request):
         username = await authorized_userid(request)
         if username:
@@ -34,8 +35,9 @@ class Web(object):
                 message='Hello, {username}!'.format(username=username))
         else:
             template = self.index_template.format(message='You need to login')
-        response = web.Response(content_type='text/html', body=(template.encode()))
-        return response
+        return aiohttp_jinja2.render_template('base_admin.html', request, {})
+        #response = web.Response(content_type='text/html', body=(template.encode()))
+        #return response
 
     async def login(self, request):
         response = web.HTTPFound('/')
