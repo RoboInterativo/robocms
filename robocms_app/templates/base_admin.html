@@ -12,40 +12,39 @@
     <title>Hello, world!</title>
 </head>
 <body>
+<div class="d-flex align-items-start flex-column" style="height: 200px;">
+  <div class="mb-auto p-2">Flex item</div>
+  <div class="p-2"><form action="/login" method="post">
+    <div class="form-group">
 
-<div class="d-flex flex-column bd-highlight mb-3">
+         {{  message }}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Login:</label>
+            <input type="email" name="login" class="form-control" id="exampleInputEmail1"
+                   aria-describedby="emailHelp" placeholder="Введите пароль">
 
-    <div class="p-2 bd-highlight align-self-center">
-
-
-        <form action="/login" method="post">
-            <div class="form-group">
-
-                {{ message }}
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Login:</label>
-                    <input type="email" name="login" class="form-control" id="exampleInputEmail1"
-                           aria-describedby="emailHelp" placeholder="Введите пароль">
-
-                </div>
+        </div>
 
 
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1"
-                           placeholder="Password">
-                </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+                   placeholder="Password">
+        </div>
 
-                <!--<input type="submit" value="Login"> -->
-                <input class="btn btn-success" type="submit" value="Login">
+        <!--<input type="submit" value="Login"> -->
+        <input class="btn btn-success" type="submit"  value="Login">
 
-        </form>
+</form>
         <a href="/logout">Logout</a>
-    </div>
-    <div class="p-2 bd-highlight align-self-center">
-    </div>
 
 </div>
+  <div class="p-2">Flex item</div>
+</div>
+
+
+
+
 
 
 <!-- Optional JavaScript -->
