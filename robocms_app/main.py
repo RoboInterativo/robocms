@@ -10,14 +10,17 @@ from aioredis import create_pool
 from settings import config, base_dir
 import jinja2
 import aiohttp_jinja2
-
-import logging
+from aiohttp.abc import AbstractAccessLogger
 
 from db_auth import DBAuthorizationPolicy
 from handlers import Web
-logging.basicConfig(format=u'%(levelname)-8s [%(asctime)s] %(message)s',
-                    level=logging.DEBUG, filename='/home/robocms.log')
 
+class AccessLogger(AbstractAccessLogger):
+
+    def log(self, request, response, time):
+        self.logger.info(f'{request.remote} '
+                         f'"{request.method} {request.path} '
+                         f'done in {time}s: {response.status}'
 async def init(loop):
     redis_pool = await create_pool(('localhost', 6379))
     dbengine = await create_engine(user= config['postgres']['user'],
@@ -27,6 +30,7 @@ async def init(loop):
 
     app = web.Application()
     app.dbengine = dbengine
+    app.logger=AccessLogger()
     setup_session(app, RedisStorage(redis_pool))
     setup_security(app,
                    SessionIdentityPolicy(),

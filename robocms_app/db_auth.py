@@ -4,9 +4,8 @@ from aiohttp_security.abc import AbstractAuthorizationPolicy
 from passlib.hash import sha256_crypt
 
 from models import users, permissions;
-import logging
-logging.basicConfig(format=u'%(levelname)-8s [%(asctime)s] %(message)s',
-                    level=logging.DEBUG, filename='/home/robocms_db.log')
+
+
 class DBAuthorizationPolicy(AbstractAuthorizationPolicy):
     def __init__(self, dbengine):
         self.dbengine = dbengine
@@ -40,10 +39,9 @@ class DBAuthorizationPolicy(AbstractAuthorizationPolicy):
 
                 where = permissions.c.user_id == user_id
                 query = permissions.select().where(where)
-                logging.info(str(query))
                 ret = await conn.execute(query)
                 result = await ret.fetchall()
-                logging.info(str(result))
+
                 if ret is not None:
                     for record in result:
                         if record.perm_name == permission:
